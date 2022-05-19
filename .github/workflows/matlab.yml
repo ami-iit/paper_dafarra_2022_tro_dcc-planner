@@ -41,5 +41,5 @@ jobs:
         
     - uses: actions/upload-artifact@v3
       with:
-        name: parameter_variation_mass
-        path: figures/experiments/plotGenerator/parameter_variation_mass.mat
+        name: Datasets
+        path: figures/experiments/plotGenerator/*.mat

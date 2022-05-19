@@ -263,11 +263,10 @@ if displayFigures
     end
     export_fig('-transparent', [outputPath, outputFileName])
 
-else
-
-    save('parameter_variation_mass.mat', 'experimentsResults');
-
 end
+
+save('parameter_variation_mass.mat', 'experimentsResults');
+
 
 %% initial position take 2
 initial_positions = 0.05 : 0.02 : 0.15;
@@ -330,3 +329,6 @@ for comp_cell = complementarities
     disp(['The ', comp_cell{:}, ' complementarity average is (', strjoin(cellstr(num2str(positions_result.(comp_cell{:}).complementarity_average(:))), ', '), ')'])
     disp(['The ', comp_cell{:}, ' cost is (', strjoin(cellstr(num2str(positions_result.(comp_cell{:}).costValue(:))), ', '), ')'])
 end
+
+save('parameter_variation_height.mat', 'positions_result');
+
