@@ -11,7 +11,7 @@ env:
   ASL_TAG: d9e058561ec67b1440761f64fa94e28a6078fe95
   HSL_TAG: 972b202b6d01c39221fe6fbe90f42779edf70e49
   matiocpp_TAG: ed9b196360b8083c3eccd3348afa7969d3a4f1fa
-  dynamical_planner_TAG: 2cea68de405def9b392c03c982d9423393e8e410
+  dynamical_planner_TAG: 09efc88679ab7a1cd8c94485c347870be63b8ebe
 
 jobs:
   build:
