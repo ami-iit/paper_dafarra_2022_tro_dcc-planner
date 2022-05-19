@@ -1,0 +1,40 @@
+name: Run matlab comparison tests
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  matlab-tests:
+    name: 'Build'
+    runs-on: ubuntu-20.04
+
+    steps:
+    
+    - name: Check out repository
+      uses: actions/checkout@master
+
+    - name: Display environment variables
+      shell: bash
+      run: env
+  
+    - name: System dependencies
+      run: |
+        sudo apt update
+        
+        sudo apt install wget tar
+      
+    - name: Download casadi
+      shell: bash
+      run: |
+        mkdir casadi
+        cd casadi
+        wget https://github.com/casadi/casadi/releases/download/3.5.5/casadi-linux-matlabR2014b-v3.5.5.tar.gz
+        tar -xvzf casadi-linux-matlabR2014b-v3.5.5.tar.gz
+        
+    - name: Set up MATLAB
+      uses: matlab-actions/setup-matlab@v1
+      
+    - name: Run MATLAB test
+      uses: matlab-actions/run-command@v1
+      with:
+        command: addpath('casadi'), cd figures/experiments/plotGenerator, plotParameterVariationsMassFalling 
