@@ -4,11 +4,22 @@ clear all;
 addpath('./labelpoints')
 addpath('./export_fig')
 
-startFolder = '../Review1/';
+if ~exist('plot_ci', 'var')
+    plot_ci = true;
+end
+
+if plot_ci
+    startFolder = '../CI/';
+    outputPath = '../../generated/CI/';
+else
+    startFolder = '../Review1/';
+    outputPath = '../../generated/Review1/';
+end
+
+
 speedVariationFolder = 'SpeedVariation/';
 speedValue = '0.05';
 parametersVariationFolder = 'ParameterVariations/';
-outputPath = '../../generated/Review1/';
 outputFileName = 'ParametersVariation.pdf';
 
 classical = struct();
@@ -107,7 +118,12 @@ for complementarityIndex = 1 : length(complementarityTypes)
         'interpreter', 'latex', 'FontSize', 11);
 end
 ylim([0, 15.1e-3])
-xlim([4.9, 7.5])
+
+if ~plot_ci
+    xlim([4.9, 7.5])
+end
+
+
 h = legend();
 set(h,'Location', 'northoutside')
 set(h,'Orientation','horizontal')

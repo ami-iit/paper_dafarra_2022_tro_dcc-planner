@@ -1,4 +1,13 @@
-startFolder = '../Review1/SpeedVariation/';
+if ~exist('plot_ci', 'var')
+    plot_ci = true;
+end
+
+if plot_ci
+    startFolder = '../CI/SpeedVariation/';
+else
+    startFolder = '../Review1/SpeedVariation/';
+end
+
 complementarityTypes = {'Classical', 'Dynamical', 'HyperbolicSecantInequality'};
 speedValues = {'0.05', '0.06', '0.07'};
 feet = {'left', 'right'};

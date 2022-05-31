@@ -37,7 +37,7 @@ jobs:
     - name: Run MATLAB test
       uses: matlab-actions/run-command@v1
       with:
-        command: addpath('casadi'), cd figures/experiments/plotGenerator, displayFigures = false, plotParameterVariationsMassFalling 
+        command: addpath('casadi'), cd figures/experiments/plotGenerator, displayFigures = false, use_dataset = false, plotParameterVariationsMassFalling 
         
     - uses: actions/upload-artifact@v3
       with:
