@@ -275,7 +275,7 @@ if displayFigures
         grid on
 
         if plot_ci
-            x_limits = [0.06, 0.13];
+            x_limits = [0.04, 0.12];
         else
             x_limits = [0.03, 0.13];
         end

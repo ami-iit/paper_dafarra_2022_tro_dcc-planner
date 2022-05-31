@@ -1,5 +1,4 @@
 close all;
-clear all;
 
 addpath('./labelpoints')
 addpath('./export_fig')
