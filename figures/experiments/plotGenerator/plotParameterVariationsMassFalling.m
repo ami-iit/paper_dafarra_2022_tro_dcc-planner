@@ -19,6 +19,8 @@ inputStruct.f0 = 0;
 
 inputStruct.cost_multiplier = 1;
 
+inputStruct.linear_solver = 'mumps';
+
 inputStruct.M_fdot = 100;
 inputStruct.epsilon_relaxed = 0.004;
 inputStruct.K_dynamic = 20;
@@ -276,8 +278,10 @@ if displayFigures
 
         if plot_ci
             x_limits = [0.04, 0.12];
+            y_limits =  [0.001, 10.0e-3];
         else
             x_limits = [0.03, 0.13];
+            y_limits =  [0.001, 9.0e-3];
         end
 
         scatterPlotWithXAxisBreak(experimentsResults.(comp_cell{:}).elapsedTimes, ... x
@@ -288,7 +292,7 @@ if displayFigures
             experimentsResults.(comp_cell{:}).marker, ... marker
             48, ... markerSize
             x_limits, ... xLim
-            [0.001, 10.0e-3], ... yLim
+            y_limits, ... yLim
             experimentsResults.(comp_cell{:}).legendName, ... DisplayName
             experimentsResults.(comp_cell{:}).labels, ... labels
             'N', ... labelPosition

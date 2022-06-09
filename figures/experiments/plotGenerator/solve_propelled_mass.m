@@ -50,7 +50,13 @@ F_k = casadi.Function('discrete_dynamics', {X_k1, U_k1, X_k2, U_k2}, {col_err});
 
 rc = x * f - epsilon_relaxed;
 dc = v * f + x * f_dot + K_dynamic * x * f - epsilon_dynamical;
-delta = 1/(cosh(scaling_hyperbolic * x) + 1e-10); %using Casadi, the sech function seems more subject to numerical issues when using mumps
+
+numeric_correction = 0;
+if inputStruct.linear_solver == 'mumps'
+    numeric_correction = 1e-10; %using Casadi, the sech function seems more subject to numerical issues when using mumps
+end
+
+delta = 1/(cosh(scaling_hyperbolic * x) + numeric_correction); 
 hc = f_dot - delta * M_fdot + (1 - delta) * K_hyperbolic * f;
 
 relaxed_complemenarity       = casadi.Function('Relaxed_Complemenarity', {X,U}, {rc});
@@ -114,7 +120,7 @@ options.expand = true;
 options.print_time = true;
 
 options.ipopt.print_level = 0;
-options.ipopt.linear_solver='mumps';
+options.ipopt.linear_solver=inputStruct.linear_solver;
 options.ipopt.ma57_pivtol = 1e-6;
 options.ipopt.mumps_pivtol = 1e-8;
 options.ipopt.nlp_scaling_max_gradient = 100.0;
