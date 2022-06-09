@@ -135,6 +135,8 @@ y_label = ylabel('Accuracy $p_z \cdot f_z$');
 set(y_label,'Interpreter','latex');
 set(y_label,'FontSize', 16);
 
+grid on
+
 if ~exist(outputPath, 'dir')
       mkdir(outputPath)
 end
