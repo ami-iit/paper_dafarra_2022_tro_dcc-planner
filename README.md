@@ -12,7 +12,9 @@ S. Dafarra, G. Romualdi and D. Pucci "Dynamic Complementarity Conditions and Who
 
 
 
-https://user-images.githubusercontent.com/18591940/178785681-2715adf9-f7ae-489c-8a75-a3f8cda77f68.mp4
+
+https://user-images.githubusercontent.com/18591940/179483328-c17e007f-06e7-4ae1-acff-7df65bfbd708.mp4
+
 
 
 
