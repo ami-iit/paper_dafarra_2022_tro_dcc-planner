@@ -122,7 +122,7 @@ jobs:
       run: |
 
         cd ${GITHUB_WORKSPACE}/cpp_ws
-        git clone https://github.com/ami-iit/matio-cpp --depth 1
+        git clone https://github.com/ami-iit/matio-cpp
         cd matio-cpp
         git checkout ${matiocpp_TAG}
         cd ${GITHUB_WORKSPACE}/cpp_ws/build
@@ -139,7 +139,7 @@ jobs:
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${IPOPT_DIR}/lib
 
         cd ${GITHUB_WORKSPACE}/cpp_ws
-        git clone https://github.com/robotology/idyntree --depth 1
+        git clone https://github.com/robotology/idyntree
         cd idyntree
         git checkout ${iDynTree_TAG}
         cd ${GITHUB_WORKSPACE}/cpp_ws/build
@@ -157,7 +157,7 @@ jobs:
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${IPOPT_DIR}/lib
         
         cd ${GITHUB_WORKSPACE}/cpp_ws
-        git clone https://github.com/ami-iit/dynamical-planner --depth 1
+        git clone https://github.com/ami-iit/dynamical-planner
         cd dynamical-planner
         git checkout ${dynamical_planner_TAG}
 
