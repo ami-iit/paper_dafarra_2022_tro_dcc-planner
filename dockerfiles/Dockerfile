@@ -106,12 +106,14 @@ RUN mkdir cpp_ws && \
            -DCMAKE_BUILD_TYPE=Release -DIDYNTREE_USES_IRRLICHT:BOOL=ON \
            /home/$USERNAME/cpp_ws/idyntree && \
      make install && \
-     cd /home/$USERNAME/cpp_ws && \
+     cd /home/$USERNAME/cpp_ws/ && \
+     find . -mindepth 1 ! -regex '^./build\(/.*\)?' -delete && \
+     cd /home/$USERNAME/cpp_ws/build && \
      find . -mindepth 1 ! -regex '^./install\(/.*\)?' -delete && \
+     cd /home/$USERNAME/cpp_ws/ && \
      git clone https://github.com/ami-iit/dynamical-planner && \
      cd dynamical-planner && \
      git checkout ${dynamical_planner_TAG} && \
-     mkdir /home/$USERNAME/cpp_ws/build &&\
      cd /home/$USERNAME/cpp_ws/build && \
      mkdir dynamical-planner && cd dynamical-planner && \
      cmake -DCMAKE_PREFIX_PATH=/home/$USERNAME/cpp_ws/build/install -DCMAKE_BUILD_TYPE=Release \
