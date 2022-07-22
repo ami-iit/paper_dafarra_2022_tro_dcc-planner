@@ -1,7 +1,7 @@
 FROM nvidia/opengl:1.2-glvnd-devel-ubuntu20.04
 LABEL org.opencontainers.image.title="Dynamic Complementarity Conditions and Whole-Body Trajectory Optimization for Humanoid Robot Locomotion"
 LABEL org.opencontainers.image.description="Infrastructure for reproducing walking tests using the planner presented in the paper"
-LABEL org.opencontainers.image.source="TBD"
+LABEL org.opencontainers.image.source="https://raw.githubusercontent.com/ami-iit/paper_dafarra_2022_tro_dcc-planner/main/dockerfiles/Dockerfile"
 LABEL org.opencontainers.image.authors="Stefano Dafarra <stefano.dafarra@iit.it>"
 
 ARG USERNAME=user
@@ -107,9 +107,11 @@ RUN mkdir cpp_ws && \
            /home/$USERNAME/cpp_ws/idyntree && \
      make install && \
      cd /home/$USERNAME/cpp_ws && \
+     find . -mindepth 1 ! -regex '^./install\(/.*\)?' -delete && \
      git clone https://github.com/ami-iit/dynamical-planner && \
      cd dynamical-planner && \
      git checkout ${dynamical_planner_TAG} && \
+     mkdir /home/$USERNAME/cpp_ws/build &&\
      cd /home/$USERNAME/cpp_ws/build && \
      mkdir dynamical-planner && cd dynamical-planner && \
      cmake -DCMAKE_PREFIX_PATH=/home/$USERNAME/cpp_ws/build/install -DCMAKE_BUILD_TYPE=Release \
@@ -121,3 +123,4 @@ RUN mkdir -p /home/${USERNAME}/.config/tmuxinator
 COPY dcc-planner.yml /home/${USERNAME}/.config/tmuxinator/.
 
 CMD ["tmuxinator", "start", "dcc-planner"]
+
