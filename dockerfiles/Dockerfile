@@ -107,10 +107,6 @@ RUN mkdir cpp_ws && \
            /home/$USERNAME/cpp_ws/idyntree && \
      make install && \
      cd /home/$USERNAME/cpp_ws/ && \
-     find . -mindepth 1 ! -regex '^./build\(/.*\)?' -delete && \
-     cd /home/$USERNAME/cpp_ws/build && \
-     find . -mindepth 1 ! -regex '^./install\(/.*\)?' -delete && \
-     cd /home/$USERNAME/cpp_ws/ && \
      git clone https://github.com/ami-iit/dynamical-planner && \
      cd dynamical-planner && \
      git checkout ${dynamical_planner_TAG} && \
