@@ -24,10 +24,10 @@ https://user-images.githubusercontent.com/18591940/179483328-c17e007f-06e7-4ae1-
  
 <div align="center">
   <a href="#reproducing-the-experiments"><b>Installation</b></a> |
+  <a href="https://ieeexplore.ieee.org/abstract/document/9847574"><b>IEEE</b></a> |
   <a href="https://arxiv.org/abs/2207.03198"><b>arXiv</b></a> |
   <a href="https://www.youtube.com/watch?v=Uc9o8TE32cw"><b>YouTube</b></a>
 </div>
-
 
 ## Reproducing the experiments
 We support running the experiments via the provided Docker image.
