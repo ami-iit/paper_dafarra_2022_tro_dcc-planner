@@ -77,7 +77,7 @@ with ``[options]`` being:
 If you find the work useful, please consider citing:
 
 ```bib
-@ARTICLE{9847574,
+@ARTICLE{dafarra2022dcc,
   author={Dafarra, Stefano and Romualdi, Giulio and Pucci, Daniele},
   journal={IEEE Transactions on Robotics}, 
   title={Dynamic Complementarity Conditions and Whole-Body Trajectory Optimization for Humanoid Robot Locomotion}, 
