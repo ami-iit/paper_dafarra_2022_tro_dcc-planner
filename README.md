@@ -82,9 +82,9 @@ If you find the work useful, please consider citing:
   journal={IEEE Transactions on Robotics}, 
   title={Dynamic Complementarity Conditions and Whole-Body Trajectory Optimization for Humanoid Robot Locomotion}, 
   year={2022},
-  volume={},
-  number={},
-  pages={1-20},
+  volume={38},
+  number={6},
+  pages={3414-3433},
   doi={10.1109/TRO.2022.3183785}}
 ```
 
